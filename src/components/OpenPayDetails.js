@@ -56,6 +56,7 @@ export class OpenPayDetails extends Component {
                             data-openpay-card="card_number"
                             onChange={handleChange("card_number")}
                             defaultValue={card_values.card_number}
+                            inputProps={{ maxLength: 16 }}
                         />
                         <br />
                         <TextField
@@ -64,6 +65,7 @@ export class OpenPayDetails extends Component {
                             data-openpay-card="expiration_month"
                             onChange={handleChange("expiration_month")}
                             defaultValue={card_values.expiration_month}
+                            inputProps={{ maxLength: 2 }}
                         />
                         <br />
                         <TextField
@@ -72,6 +74,7 @@ export class OpenPayDetails extends Component {
                             data-openpay-card="expiration_year"
                             onChange={handleChange("expiration_year")}
                             defaultValue={card_values.expiration_year}
+                            inputProps={{ maxLength: 2 }}
                         />
                         <br />
                         <TextField

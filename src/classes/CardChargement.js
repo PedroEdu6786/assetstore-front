@@ -17,7 +17,7 @@ class CardChargement {
         if (res.ok) {
             return res.json();
         } else {
-            return res;
+            return res.json();
         }
     }
 }

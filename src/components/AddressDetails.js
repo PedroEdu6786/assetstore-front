@@ -79,6 +79,7 @@ export class AddressDetails extends Component {
                             floatingLabelText="Country Code"
                             onChange={handleChange("country_code")}
                             defaultValue={values.country_code}
+                            maxLength="2"
                         />
                         <br />
                         <TextField

@@ -11,11 +11,27 @@ export class OpenPayDetails extends Component {
     continue = (e) => {
         e.preventDefault();
         if (this.props.validInputs("payment-form")) {
+            if (!this.validateCard()) {
+                alert("Invalid card provided");
+                return;
+            }
             this.generateTokenId();
             this.props.nextStep();
         } else {
             alert("input missing");
         }
+    };
+
+    previous = (e) => {
+        e.preventDefault();
+        this.props.prevStep();
+    };
+
+    validateCard = () => {
+        var card_data = document.getElementById("card_number").value;
+        if (card_data.length < 16) return false;
+        var is_num = /^\d+$/.test(card_data);
+        return is_num;
     };
 
     generateTokenId = () => {
@@ -24,11 +40,6 @@ export class OpenPayDetails extends Component {
             this.props.address,
             this.props.card_values
         );
-    };
-
-    previous = (e) => {
-        e.preventDefault();
-        this.props.prevStep();
     };
 
     render() {
@@ -51,12 +62,13 @@ export class OpenPayDetails extends Component {
                         />
                         <br />
                         <TextField
+                            id="card_number"
                             hintText="Enter your card number"
                             floatingLabelText="Card Number"
                             data-openpay-card="card_number"
                             onChange={handleChange("card_number")}
                             defaultValue={card_values.card_number}
-                            inputProps={{ maxLength: 16 }}
+                            maxLength="16"
                         />
                         <br />
                         <TextField
@@ -65,7 +77,7 @@ export class OpenPayDetails extends Component {
                             data-openpay-card="expiration_month"
                             onChange={handleChange("expiration_month")}
                             defaultValue={card_values.expiration_month}
-                            inputProps={{ maxLength: 2 }}
+                            maxLength="2"
                         />
                         <br />
                         <TextField
@@ -74,7 +86,7 @@ export class OpenPayDetails extends Component {
                             data-openpay-card="expiration_year"
                             onChange={handleChange("expiration_year")}
                             defaultValue={card_values.expiration_year}
-                            inputProps={{ maxLength: 2 }}
+                            maxLength="2"
                         />
                         <br />
                         <TextField
@@ -83,6 +95,7 @@ export class OpenPayDetails extends Component {
                             data-openpay-card="cvv2"
                             onChange={handleChange("cvv2")}
                             defaultValue={card_values.cvv2}
+                            maxLength="4"
                         />
                         <br />
                     </form>

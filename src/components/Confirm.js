@@ -13,10 +13,9 @@ export class Confirm extends Component {
         e.preventDefault();
         this.handleCharge();
         setTimeout(() => {}, 3000);
-        this.props.nextStep();
     };
 
-    handleCharge = () => {
+    handleCharge = async () => {
         var token_id = localStorage.getItem("token_card");
         var session_id = localStorage.getItem("session_id");
         var customer = new CustomerDTO();
@@ -27,7 +26,12 @@ export class Confirm extends Component {
         customer.setTokenId(token_id);
 
         var card = new CardChargement(customer);
-        var data = card.paymentCharge(API_BASE_URL);
+        let data = await card.paymentCharge(API_BASE_URL);
+        if (!data.ok) {
+            alert("Charge Failed");
+            return;
+        }
+        this.props.nextStep();
     };
 
     previous = (e) => {

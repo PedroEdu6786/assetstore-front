@@ -14,7 +14,11 @@ class CardChargement {
             body: JSON.stringify(this.customer),
         });
 
-        return res.json();
+        if (res.ok) {
+            return res.json();
+        } else {
+            return res;
+        }
     }
 }
 

@@ -16,11 +16,11 @@ class TokenIdGenerator {
     }
 
     error_callback(response) {
-        var desc =
-            response.data.description != undefined
-                ? response.data.description
-                : response.message;
-        alert("ERROR [" + response.status + "] " + desc);
+        // var desc =
+        //     response.data.description != undefined
+        //         ? response.data.description
+        //         : response.message;
+        // alert("ERROR [" + response.status + "] " + desc);
     }
 }
 

@@ -1,4 +1,8 @@
 class CardChargement {
+    constructor(customer) {
+        this.customer = customer;
+    }
+
     async paymentCharge(apiBaseUrl) {
         var res = await fetch(`${apiBaseUrl}/charge`, {
             method: "POST",
@@ -7,7 +11,7 @@ class CardChargement {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(),
+            body: JSON.stringify(this.customer),
         });
 
         return res.json();

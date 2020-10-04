@@ -12,6 +12,7 @@ export class Confirm extends Component {
     continue = (e) => {
         e.preventDefault();
         this.handleCharge();
+        setTimeout(() => {}, 3000);
         this.props.nextStep();
     };
 

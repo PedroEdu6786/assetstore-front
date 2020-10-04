@@ -74,7 +74,11 @@ export class UserForm extends Component {
     };
 
     handleChange = (input) => (e) => {
-        if (input == "country_code") e.target.value.toUpperCase();
+        if (input == "country_code") {
+            this.setState({ country_code: e.target.value.toUpperCase() });
+            return;
+        }
+
         this.setState({ [input]: e.target.value });
     };
 

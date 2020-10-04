@@ -13,7 +13,6 @@ class TokenIdGenerator {
     success_callback(response) {
         var tokenId = response.data.id;
         localStorage.setItem("token_card", tokenId);
-        ///document.getElementById("payment-form").submit();
     }
 
     error_callback(response) {

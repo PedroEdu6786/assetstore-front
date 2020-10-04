@@ -46,8 +46,8 @@ export class AddressDetails extends Component {
                         />
                         <br />
                         <TextField
-                            hintText="Enter suburb"
-                            floatingLabelText="Line3"
+                            hintText="Enter line 2"
+                            floatingLabelText="Line2"
                             onChange={handleChange("line2")}
                             defaultValue={values.line2}
                         />

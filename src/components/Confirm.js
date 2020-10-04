@@ -28,7 +28,6 @@ export class Confirm extends Component {
         var card = new CardChargement(customer);
         let data = await card.paymentCharge(API_BASE_URL);
 
-        console.log(data);
         if (data.status === "completed") {
             this.props.nextStep();
             return;

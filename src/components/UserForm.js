@@ -37,8 +37,8 @@ export class UserForm extends Component {
 
     async componentDidMount() {
         var data = await new ApiCredentials().getApiCredentials(API_BASE_URL);
-        const { apiKey, merchantId } = data;
-        this.setupApiKeys(apiKey, merchantId);
+        const { apiPublicKey, merchantId } = data;
+        this.setupApiKeys(apiPublicKey, merchantId);
         this.setupIdSession();
     }
 

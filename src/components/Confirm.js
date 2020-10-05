@@ -11,7 +11,6 @@ const API_BASE_URL = "http://localhost:8080";
 export class Confirm extends Component {
     continue = (e) => {
         e.preventDefault();
-        this.props.nextStep();
         this.handleCharge();
         setTimeout(() => {}, 3000);
     };

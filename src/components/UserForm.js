@@ -55,7 +55,9 @@ export class UserForm extends Component {
 
     nextStep = () => {
         var { step } = this.state;
-        this.setState({ step: step + 1 });
+        if (step < 5) {
+            this.setState({ step: step + 1 });
+        }
     };
 
     prevStep = () => {
@@ -165,11 +167,7 @@ export class UserForm extends Component {
                     />
                 );
             case 5:
-                return (
-                    <Success
-                        userValues={userValues}
-                    />
-                );
+                return <Success userValues={userValues} />;
             default:
                 return <h1>Failed, reload</h1>;
         }

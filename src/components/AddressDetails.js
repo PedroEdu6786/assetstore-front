@@ -86,7 +86,7 @@ export class AddressDetails extends Component {
                             hintText="11111"
                             floatingLabelText="Postal Code"
                             onChange={handleChange("postal_code")}
-                            defaultValue={values.country_code}
+                            defaultValue={values.postal_code}
                         />
                         <br />
                     </form>

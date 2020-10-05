@@ -167,8 +167,7 @@ export class UserForm extends Component {
             case 5:
                 return (
                     <Success
-                        nextStep={this.nextStep}
-                        prevStep={this.prevStep}
+                        userValues={userValues}
                     />
                 );
             default:

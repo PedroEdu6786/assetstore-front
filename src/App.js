@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import { UserForm } from "./components/UserForm";
+import React, { Fragment } from 'react'
+import Charge from './app/Charge'
+import OpenPaySetup from './components/OpenPaySetup'
 
-export class App extends Component {
-    render() {
-        return (
-            <React.Fragment>
-                <UserForm />
-            </React.Fragment>
-        );
-    }
+const App = () => {
+    return (
+        <Fragment>
+            <OpenPaySetup />
+            <Charge />
+        </Fragment>
+    )
 }
 
-export default App;
+export default App

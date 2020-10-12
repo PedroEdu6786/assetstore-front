@@ -13,9 +13,10 @@ const PaymentForm = ({ payment }) => {
     }
 
     const emptyInputs = () => {
-        const inputs = document.querySelectorAll('input')
-        for (let i = 0; i < inputs.length - 1; i++) {
-            if (inputs[i].value.split(' ') === '') return true
+        var inputs = document.querySelectorAll('input')
+        console.log(inputs[0].value.split(' ').join('') === '')
+        for (let i = 0; i < inputs.length; i++) {
+            if (inputs[i].value.split(' ').join('') === '') return true
         }
 
         return false

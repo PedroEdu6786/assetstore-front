@@ -1,12 +1,14 @@
 import React, { Fragment, useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import Modal from 'react-modal'
-import TransactionConfirm from './TransactionConfirm'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
+import TransactionConfirm from './TransactionConfirm'
+import Loader from './Loader'
 
 const Confirm = ({ state, setState, paymentMethod }) => {
     const [confirm, setConfirm] = useState(false)
+    const [loading, setLoading] = useState(false)
 
     const modalStyles = {
         overlay: {
@@ -26,6 +28,7 @@ const Confirm = ({ state, setState, paymentMethod }) => {
         <Fragment>
             <CSSTransition in={state} timeout={300} classNames="dialog">
                 <Modal closeTimeoutMS={500} isOpen={state} style={modalStyles}>
+                    <Loader loading={loading} />
                     <Typography variant="h4">
                         Sure you want to proceed with payment?
                     </Typography>
@@ -46,7 +49,10 @@ const Confirm = ({ state, setState, paymentMethod }) => {
                 </Modal>
             </CSSTransition>
             {confirm ? (
-                <TransactionConfirm paymentMethod={paymentMethod} />
+                <TransactionConfirm
+                    paymentMethod={paymentMethod}
+                    setLoading={setLoading}
+                />
             ) : (
                 <Fragment />
             )}

@@ -7,13 +7,14 @@ import OpenPayPayment from '../classes/OpenPayPayment'
 import customer from '../utils/customerDetails'
 import product from '../utils/productDetails'
 
-const TransactionConfirm = ({ paymentMethod }) => {
+const TransactionConfirm = ({ paymentMethod, setLoading }) => {
     const history = useHistory()
 
     const handlePayment = () => {
         switch (paymentMethod) {
             case payments.CREDIT:
                 var form = document.getElementById('payment-form')
+                setLoading(true)
                 TokenGenerator.generateToken(form, handleSuccess, handleError)
                 break
             case payments.OXXO:

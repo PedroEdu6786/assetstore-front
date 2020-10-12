@@ -4,6 +4,7 @@ const product = {
     good: 'Correo',
     id: 'MXN371599664762',
     amount: '200',
+    huso: 'Africa/Abidjan',
 }
 
 export default product

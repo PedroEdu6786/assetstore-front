@@ -1,7 +1,10 @@
-import React, { useState, Fragment } from 'react'
+import React, { useState } from 'react'
 import ProductInfo from '../components/payment/ProductInfo'
 import PayOption from '../components/payment/PayOption'
 import TransactionForm from '../components/payment/TransactionForm'
+import Container from '@material-ui/core/Container'
+import Typography from '@material-ui/core/Typography'
+import Paper from '@material-ui/core/Paper'
 
 const Payment = () => {
     //Type of payment ex. Oxxo, OpenPay
@@ -16,12 +19,14 @@ const Payment = () => {
     // Displays options of payment
     // Displays the form to fill to complete transaction
     return (
-        <Fragment>
-            <h1>Información de pago</h1>
-            <ProductInfo />
-            <PayOption handlePaymentOption={handlePaymentOption} />
-            <TransactionForm payment={payment} />
-        </Fragment>
+        <Container maxWidth="md" className="payment-container">
+            <Paper className="payment-data">
+                <Typography variant="h3">Información de pago</Typography>
+                <ProductInfo />
+                <PayOption handlePaymentOption={handlePaymentOption} />
+                <TransactionForm payment={payment} />
+            </Paper>
+        </Container>
     )
 }
 

@@ -11,9 +11,9 @@ const TransactionConfirm = ({ paymentMethod }) => {
     const history = useHistory()
 
     const handlePayment = () => {
-        const form = document.getElementById('payment-form')
         switch (paymentMethod) {
             case payments.CREDIT:
+                var form = document.getElementById('payment-form')
                 TokenGenerator.generateToken(form, handleSuccess, handleError)
                 break
             case payments.OXXO:
@@ -34,7 +34,13 @@ const TransactionConfirm = ({ paymentMethod }) => {
         }
     }
 
-    const handleError = (response) => {}
+    const handleError = (response) => {
+        var desc =
+            response.data.description != undefined
+                ? response.data.description
+                : response.message
+        alert('ERROR [' + response.status + '] ' + desc)
+    }
 
     const setChargeBody = (tokenId) => {
         const sessionId = localStorage.getItem('sessionId')

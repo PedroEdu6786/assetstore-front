@@ -1,10 +1,11 @@
-import React, { Fragment } from 'react'
+import React from 'react'
+import Typography from '@material-ui/core/Typography'
 
 const Success = () => {
     return (
-        <Fragment>
+        <Typography variant="h3">
             <h1>Success</h1>
-        </Fragment>
+        </Typography>
     )
 }
 

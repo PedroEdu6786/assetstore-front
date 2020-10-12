@@ -2,6 +2,8 @@ import React, { Fragment, useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import Modal from 'react-modal'
 import TransactionConfirm from './TransactionConfirm'
+import Typography from '@material-ui/core/Typography'
+import Button from '@material-ui/core/Button'
 
 const Confirm = ({ state, setState, paymentMethod }) => {
     const [confirm, setConfirm] = useState(false)
@@ -24,9 +26,23 @@ const Confirm = ({ state, setState, paymentMethod }) => {
         <Fragment>
             <CSSTransition in={state} timeout={300} classNames="dialog">
                 <Modal closeTimeoutMS={500} isOpen={state} style={modalStyles}>
-                    <h3>Sure you want to proceed with payment?</h3>
-                    <button onClick={setModalState}>Cancel</button>
-                    <button onClick={handleTransaction}>Confirm Payment</button>
+                    <Typography variant="h4">
+                        Sure you want to proceed with payment?
+                    </Typography>
+                    <Button
+                        variant="outlined"
+                        color="secondary"
+                        onClick={setModalState}
+                    >
+                        Cancel
+                    </Button>
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={handleTransaction}
+                    >
+                        Confirm Payment
+                    </Button>
                 </Modal>
             </CSSTransition>
             {confirm ? (

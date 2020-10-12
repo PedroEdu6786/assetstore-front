@@ -8,14 +8,16 @@ const PayOption = ({ handlePaymentOption }) => {
                 src="./static/cards.png"
                 alt="credit"
                 name="credit"
-                width="20%"
+                width="100%"
+                className="option-container"
                 onClick={handlePaymentOption}
             />
             <img
                 src="./static/oxxo.png"
                 alt="oxxo"
                 name="oxxo"
-                width="20%"
+                width="100%"
+                className="option-container"
                 onClick={handlePaymentOption}
             />
         </Fragment>

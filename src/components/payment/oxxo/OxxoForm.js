@@ -1,4 +1,7 @@
-import React, { Fragment } from 'react'
+import React from 'react'
+import Grid from '@material-ui/core/Grid'
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
 
 const OxxoForm = ({ continuePayment, emptyInputs }) => {
     const validateInputs = () => {
@@ -6,23 +9,33 @@ const OxxoForm = ({ continuePayment, emptyInputs }) => {
             continuePayment()
             return
         }
-
-        // Print out error modal
     }
 
     return (
-        <Fragment>
-            <form id="payment-form" name="processCard">
-                <label>Phone Number:</label>
-                <input data-openpay-card="phone_number" size="50" type="text" />
-                <input
-                    id="makeRequestCard"
-                    type="button"
-                    value="Continue"
-                    onClick={validateInputs}
-                />
-            </form>
-        </Fragment>
+        <form id="payment-form" name="processCard">
+            <Grid container direction="column">
+                <Grid item>
+                    <TextField
+                        label="Phone Number"
+                        placeholder="999 425 9456"
+                        data-openpay-card="phone_number"
+                        type="text"
+                    />
+                </Grid>
+                <Grid item>
+                    <br />
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        id="makeRequestCard"
+                        type="button"
+                        onClick={validateInputs}
+                    >
+                        Continue
+                    </Button>
+                </Grid>
+            </Grid>
+        </form>
     )
 }
 

@@ -3,6 +3,8 @@ import Grid from '@material-ui/core/Grid'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 
+import styles from '../../../Form.module.css'
+
 const OxxoForm = ({ continuePayment, emptyInputs }) => {
     const validateInputs = () => {
         if (!emptyInputs()) {
@@ -20,6 +22,7 @@ const OxxoForm = ({ continuePayment, emptyInputs }) => {
                         placeholder="999 425 9456"
                         data-openpay-card="phone_number"
                         type="text"
+                        className={styles.input}
                     />
                 </Grid>
                 <Grid item>
@@ -30,6 +33,7 @@ const OxxoForm = ({ continuePayment, emptyInputs }) => {
                         id="makeRequestCard"
                         type="button"
                         onClick={validateInputs}
+                        className={styles.button}
                     >
                         Continue
                     </Button>

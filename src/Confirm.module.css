@@ -1,0 +1,14 @@
+.font {
+    color: rgb(243, 243, 243) !important;
+    padding-bottom: 1rem;
+}
+
+.button {
+    background: black !important;
+}
+
+.modal {
+    background: #25282c;
+    padding: 5rem;
+    margin: 10rem;
+}

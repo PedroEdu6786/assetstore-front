@@ -4,6 +4,8 @@ import Grid from '@material-ui/core/Grid'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 
+import styles from '../../../Form.module.css'
+
 const CardForm = ({ continuePayment, emptyInputs }) => {
     const [card, setCard] = useState(true)
     const [cvc, setCvc] = useState(true)
@@ -127,6 +129,7 @@ const CardForm = ({ continuePayment, emptyInputs }) => {
                         id="makeRequestCard"
                         type="button"
                         onClick={validateInputs}
+                        className={styles.button}
                     >
                         Continue
                     </Button>

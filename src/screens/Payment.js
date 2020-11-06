@@ -6,6 +6,8 @@ import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
 import Paper from '@material-ui/core/Paper'
 
+import styles from '../Form.module.css'
+
 const Payment = () => {
     //Type of payment ex. Oxxo, OpenPay
     const [payment, setPayment] = useState('')
@@ -20,8 +22,10 @@ const Payment = () => {
     // Displays the form to fill to complete transaction
     return (
         <Container maxWidth="md" className="payment-container">
-            <Paper className="payment-data">
-                <Typography variant="h3">Información de pago</Typography>
+            <Paper className={styles.paper}>
+                <Typography variant="h3" className={styles.font}>
+                    Información de pago
+                </Typography>
                 <ProductInfo />
                 <PayOption handlePaymentOption={handlePaymentOption} />
                 <TransactionForm payment={payment} />

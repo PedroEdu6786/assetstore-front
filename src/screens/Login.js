@@ -4,6 +4,8 @@ import OpenPay from '../classes/OpenPay'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 
+import styles from '../Login.module.css'
+
 const Login = (props) => {
     const login = () => {
         auth.login()
@@ -18,10 +20,15 @@ const Login = (props) => {
             alignItems="center"
             justify="center"
             spacing={0}
-            className="login"
+            className={styles.login}
         >
             <Grid item>
-                <Button color="primary" variant="contained" onClick={login}>
+                <Button
+                    color="primary"
+                    variant="contained"
+                    onClick={login}
+                    className={styles.button}
+                >
                     Login
                 </Button>
             </Grid>

@@ -1,6 +1,8 @@
 //Displays different types of payment options
 import React, { Fragment } from 'react'
 
+import styles from '../../Form.module.css'
+
 const PayOption = ({ handlePaymentOption }) => {
     return (
         <Fragment>
@@ -9,7 +11,7 @@ const PayOption = ({ handlePaymentOption }) => {
                 alt="credit"
                 name="credit"
                 width="100%"
-                className="option-container"
+                className={styles.optionContainer}
                 onClick={handlePaymentOption}
             />
             <img
@@ -17,7 +19,7 @@ const PayOption = ({ handlePaymentOption }) => {
                 alt="oxxo"
                 name="oxxo"
                 width="100%"
-                className="option-container"
+                className={styles.optionContainer}
                 onClick={handlePaymentOption}
             />
         </Fragment>

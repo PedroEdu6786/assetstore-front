@@ -1,0 +1,33 @@
+.paper {
+    background: #25282c !important;
+    padding: 3rem 4rem;
+}
+
+.font {
+    color: rgb(243, 243, 243) !important;
+}
+
+.optionContainer {
+    height: 120px;
+    width: 20%;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    transition: 0.5s;
+    margin-right: 5rem;
+    cursor: pointer;
+    background: #686e78;
+}
+
+.optionContainer:hover,
+.optionContainer:focus {
+    transform: scale(1.2);
+}
+
+.button {
+    background: #25282c !important;
+}
+
+input[type='text'],
+label {
+    color: rgb(243, 243, 243) !important;
+}

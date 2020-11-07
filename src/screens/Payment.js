@@ -5,6 +5,7 @@ import TransactionForm from '../components/payment/TransactionForm'
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
 import Paper from '@material-ui/core/Paper'
+import ThemeToggle from '../components/ThemeToggle/ThemeToggle'
 
 import styles from '../Form.module.css'
 
@@ -29,6 +30,7 @@ const Payment = () => {
                 <ProductInfo />
                 <PayOption handlePaymentOption={handlePaymentOption} />
                 <TransactionForm payment={payment} />
+                <ThemeToggle />
             </Paper>
         </Container>
     )

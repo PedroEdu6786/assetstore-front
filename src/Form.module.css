@@ -1,10 +1,12 @@
+@import './Variables.css';
+
 .paper {
-    background: #25282c !important;
+    background: var(--backgroundSecondary) !important;
     padding: 3rem 4rem;
 }
 
 .font {
-    color: rgb(243, 243, 243) !important;
+    color: var(--foregroundSecondary) !important;
 }
 
 .optionContainer {

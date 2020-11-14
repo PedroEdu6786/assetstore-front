@@ -6,6 +6,7 @@ import ChargeDTO from '../classes/ChargeDTO'
 import OpenPayPayment from '../classes/OpenPayPayment'
 import customer from '../utils/customerDetails'
 import product from '../utils/productDetails'
+import { getRandomInt } from '../utils/randomNumbers';
 
 const TransactionConfirm = ({ paymentMethod, setLoading }) => {
     const history = useHistory()
@@ -13,6 +14,7 @@ const TransactionConfirm = ({ paymentMethod, setLoading }) => {
     const handlePayment = () => {
         switch (paymentMethod) {
             case payments.CREDIT:
+                console.log("pagando...");
                 var form = document.getElementById('payment-form')
                 setLoading(true)
                 TokenGenerator.generateToken(form, handleSuccess, handleError)
@@ -47,9 +49,11 @@ const TransactionConfirm = ({ paymentMethod, setLoading }) => {
         const sessionId = localStorage.getItem('sessionId')
         var charge = new ChargeDTO()
 
+        const newCustomer = customer[getRandomInt(0, 4)];
+
         charge.setAmount(product.amount)
         charge.setDescription(product.concept)
-        charge.setCustomer(customer)
+        charge.setCustomer(newCustomer)
         charge.setDeviceSessionId(sessionId)
         charge.setTokenId(tokenId)
 
@@ -57,8 +61,8 @@ const TransactionConfirm = ({ paymentMethod, setLoading }) => {
     }
 
     useEffect(() => {
-        handlePayment()
-    })
+        handlePayment();
+    }, [])
 
     return <Fragment />
 }

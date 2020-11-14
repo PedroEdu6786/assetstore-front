@@ -11,3 +11,10 @@ html.dark {
     --foregroundPrimary: rgb(255, 255, 255);
     --foregroundSecondary: rgb(186, 186, 187);
 }
+
+html.mix {
+    --backgroundPrimary: rgb(151, 151, 151);
+    --backgroundSecondary: rgb(255, 255, 255);
+    --foregroundPrimary: rgb(255, 255, 255);
+    --foregroundSecondary: rgb(186, 186, 187);
+}

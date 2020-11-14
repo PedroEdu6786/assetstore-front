@@ -1,8 +1,11 @@
+@import './Variables.css';
+
 .login {
-    background: #151618;
+    background: var(--backgroundPrimary);
     height: 100vh;
 }
 
 .button {
-    background: #25282c !important;
+    background: var(--backgroundSecondary) !important;
+    color: var(--foregroundPrimary) !important;
 }

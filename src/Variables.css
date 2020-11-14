@@ -1,0 +1,13 @@
+html {
+    --backgroundPrimary: rgb(151, 151, 151);
+    --backgroundSecondary: rgb(255, 255, 255);
+    --foregroundPrimary: rgb(0, 0, 0);
+    --foregroundSecondary: rgb(12, 5, 53);
+}
+
+html.dark {
+    --backgroundPrimary: rgb(0, 0, 0);
+    --backgroundSecondary: rgb(65, 61, 61);
+    --foregroundPrimary: rgb(255, 255, 255);
+    --foregroundSecondary: rgb(186, 186, 187);
+}
